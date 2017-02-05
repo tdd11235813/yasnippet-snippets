@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: launch for grid-striding loop kernel
+# key: klgr
+# --
+int numSMs;
+CHECK_CUDA( cudaDeviceGetAttribute(&numSMs, cudaDevAttrMultiProcessorCount, ${1:0}) );
+int blocks = ${2:128}*numSMs;
+int threads = ${3:128};
+kl$0

@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: global_fun_declaration w grid-striding loop
+# key: gr
+# --
+__global__
+void ${1:name}(${2:args}) {
+  int ${3:id};
+  for($3=blockDim.x*blockIdx.x + threadIdx.x;
+      $3<${4:n};
+      $3+=blockDim.x*gridDim.x)
+  {
+    $0
+  }
+}

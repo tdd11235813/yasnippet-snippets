@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: global_fun_declaration
+# key: g
+# --
+__global__
+void ${1:name}(${2:args}) {
+  int ${3:id} = blockIdx.x * blockDim.x + threadIdx.x;
+  if($3>=${4:n})
+    return;
+  $0
+}
